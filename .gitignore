@@ -1,0 +1,26 @@
+# Simulation and Synthesis Junk
+*.log
+*.jou
+*.pb
+*.vcd
+*.wdb
+*.str
+*.vlog
+*.key
+*.exe
+sim/
+xsim.dir/
+obj/
+*.bak
+*.orig
+
+# Vivado/ModelSim Workspace junk
+*.aws
+*.asdb
+*.awr
+*.pro
+*.ini
+
+# OS Junk
+.DS_Store
+Thumbs.db

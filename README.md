@@ -1,8 +1,9 @@
-# ⚙️ Multi-Cycle Processor — Verilog HDL
+# 🚀 16-Bit Multi-Cycle Processor Design
+## Verilog HDL | Computer Architecture Project
 
+> **Author:** [Layan]  
 > **Course:** ENCS4370 — Computer Architecture  
 > **Semester:** Spring 2024/2025  
-> **Author:** [layan-34](https://github.com/layan-34)  
 > **Repository:** [github.com/layan-34/arc-project-Multi-Cycle-processor](https://github.com/layan-34/arc-project-Multi-Cycle-processor)
 
 ---
@@ -93,25 +94,17 @@ A complete **Multi-Cycle Processor** designed and implemented in **Verilog HDL**
    cd arc-project-Multi-Cycle-processor
    ```
 
-2. **Open in your simulator:**
-   - **Vivado:** Create a new project and add all `.v` files. Open `arcticture_project.aws` for the workspace.
-   - **ModelSim:** Compile all `.v` files and run `test.v` or individual testbenches.
-   - **Icarus Verilog:**
-     ```bash
-     iverilog -o sim *.v
-     vvp sim
-     ```
-
-3. **Run testbenches** for individual modules:
+2. **Run Simulation (Icarus Verilog):**
    ```bash
-   # Example: Run ALU testbench
-   iverilog -o alu_sim ALU.v
-   vvp alu_sim
+   # Compile source and testbench
+   iverilog -o cpu_sim src/*.v tests/test.v
+   # Run simulation
+   vvp cpu_sim
    ```
 
-4. **View waveforms** (if VCD files are generated):
+3. **View Waveforms:**
    ```bash
-   gtkwave Alu.vcd
+   gtkwave cpu_sim.vcd
    ```
 
 ---
@@ -120,25 +113,29 @@ A complete **Multi-Cycle Processor** designed and implemented in **Verilog HDL**
 
 ```
 arc-project-Multi-Cycle-processor/
-├── computer.v                                    # Top-level module (CPU + memories)
-├── cpu.v                                         # CPU core (datapath + control unit)
-├── control_unit.v                                # FSM-based multi-cycle control unit
-├── datapath.v                                    # Datapath with pipeline registers
-├── ALU.v                                         # 32-bit ALU with flag generation
-├── registerFile.v                                # 16 × 32-bit register file
-├── data_memory.v                                 # Data memory with LDW/SDW support
-├── instructionMemory.v                           # 1024-word instruction memory
-├── MUX.v                                         # 4-to-1 multiplexers (4-bit & 32-bit)
-├── EXT.v                                         # Sign/Zero extender
-├── flipflop.v                                    # 32-bit flip-flop with write enable
-├── pc.v                                          # Program counter module
-├── processor.v                                   # Alternative processor wrapper
-├── test.v                                        # Top-level integration testbench
-├── truth table.xlsx                              # Control signal truth table
-├── arcticture_project.aws                        # Vivado workspace file
-├── Project-2-Spring-2024-2025.pdf                # Project specification
-├── Project2Report.pdf                            # Final project report
-└── README.md                                     # This file
+├── src/                                          # Core Verilog source files
+│   ├── computer.v                                # Top-level module (CPU + memories)
+│   ├── cpu.v                                     # CPU core (datapath + control unit)
+│   ├── control_unit.v                            # FSM-based multi-cycle control unit
+│   ├── datapath.v                                # Datapath with pipeline registers
+│   ├── ALU.v                                     # 32-bit ALU with flag generation
+│   ├── registerFile.v                            # 16 × 32-bit register file
+│   ├── data_memory.v                             # Data memory with LDW/SDW support
+│   ├── instructionMemory.v                       # 1024-word instruction memory
+│   ├── MUX.v                                     # 4-to-1 multiplexers (4-bit & 32-bit)
+│   ├── EXT.v                                     # Sign/Zero extender
+│   ├── flipflop.v                                # 32-bit flip-flop with write enable
+│   ├── pc.v                                      # Program counter module
+│   └── processor.v                               # Alternative processor wrapper
+├── tests/                                        # Simulation testbenches
+│   └── test.v                                    # Top-level integration testbench
+├── docs/                                         # Documentation and specifications
+│   ├── truth table.xlsx                          # Control signal truth table
+│   ├── Project-2-Spring-2024-2025.pdf            # Project specification
+│   └── Project2Report.pdf                        # Final project report
+├── .gitignore                                    # Excludes simulation artifacts
+├── LICENSE                                       # MIT License
+└── README.md                                     # Project documentation
 ```
 
 ---
@@ -201,6 +198,15 @@ When an exception is detected during the DECODE stage, the processor enters the 
 
 ---
 
+## 👨‍💻 Author & Contact
+
+**Layan**  
+- 📧 Email: [your.email@example.com](mailto:your.email@example.com)
+- 💼 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+- 🖥️ GitHub: [@layan-34](https://github.com/layan-34)
+
+---
+
 ## 🔗 Links
 
 | Resource | URL |
@@ -215,7 +221,7 @@ When an exception is detected during the DECODE stage, the processor enters the 
 
 ## 📝 License
 
-This project was developed as a university assignment for ENCS4370 — Computer Architecture.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
